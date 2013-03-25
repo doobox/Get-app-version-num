@@ -1,19 +1,4 @@
 
-// gets the current short version string from the app plist in stanalone only
-function getCurrentAppVersion
-put the filename of stack "Your Main Stack Name Here" into tPath // this must be changed to the name of your main stack
-set itemdel to "/"
-delete the last item of tPath
-delete the last item of tPath
-put url ("file:" & tPath & "/Info.plist") into pListData
-put lineOffset("<key>CFBundleShortVersionString</key>",pListData) into nLine
-put char 9 to -10 of line nLine+1 of pListData into vNum
-return vNum
-end getCurrentAppVersion
- 
- 
-// test the function in a standalone
-on mouseUp
-put getCurrentAppVersion() into tShortVersion
-answer tShortVersion
-end mouseUp
+// gets the current short version string from the app plist in stanalone onlyfunction getCurrentAppVersion   put the filename of stack "Your Main Stack Name Here" into tPath // this must be changed to the name of your main stack   set itemdel to "/"   delete the last item of tPath   delete the last item of tPath   put url ("file:" & tPath & "/Info.plist") into pListData   put lineOffset("<key>CFBundleShortVersionString</key>",pListData) into nLine   put char 9 to -10 of line nLine+1 of pListData into vNum   return vNumend getCurrentAppVersion// test the function in a standaloneon mouseUp   put getCurrentAppVersion() into tShortVersion   answer tShortVersionend mouseUp
+
+// end script
